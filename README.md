@@ -1,5 +1,7 @@
 # topaz
 #### This is a fork to try and remove the need for goosemod, WIP
+currently Topaz's UI crashes discord but plugins and themes can be installed with ``` topaz.install('INSTALL URL') ```   
+how to install: run ``` eval(await (await fetch('https://wmeluna.com/topaz/main.js')).text()) ```
 A "next-gen" mod bundling client-side in web, designed for wide compat and with no limits.
 
 > **Warning** |
