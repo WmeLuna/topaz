@@ -1,4 +1,5 @@
 # topaz
+#### This is a fork to try and remove the need for goosemod, WIP
 A "next-gen" mod bundling client-side in web, designed for wide compat and with no limits.
 
 > **Warning** |
