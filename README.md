@@ -1,7 +1,13 @@
 # topaz
 #### This is a fork to try and remove the need for goosemod, WIP
 currently Topaz's UI crashes discord but plugins and themes can be installed with ``` topaz.install('INSTALL URL') ```   
-how to install: run ``` eval(await (await fetch('https://wmeluna.com/topaz/main.js')).text()) ```   
+how to install: run 
+```js
+eval(await (await fetch('https://wmeluna.com/topaz/gooseless/libs.js')).text())
+eval(await (await fetch('https://wmeluna.com/topaz/gooseless/goosesettings.js')).text())
+eval(await (await fetch('https://wmeluna.com/topaz/gooseless/goosepatcher.js')).text())
+eval(await (await fetch('https://wmeluna.com/topaz/src/index.js')).text())
+```   
 A "next-gen" mod bundling client-side in web, designed for wide compat and with no limits.
 
 > **Warning** |
