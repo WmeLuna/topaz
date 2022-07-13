@@ -6,9 +6,9 @@ const read = (path) => ('`' + fs.readFileSync('src/' + path + (!path.includes('.
 
 code = code.replace(/await getBuiltin\(['"`](.*?)['"`]\)/g, (_, path) => read('builtins/' + path));
 code = code.replace(/await \(await fetch\(\'http:\/\/localhost\:1337\/src\/([A-Za-z0-9\/\.]*?)\'\)\)\.text\(\)/g, (_, path) => read(path));
-code = code.replace('`http://localhost:1337/src/index.js`', '`https://goosemod.github.io/topaz/out.js`');
-code = code.replace('`http://localhost:1337/popular.json`', '`https://goosemod.github.io/topaz/popular.json`');
-code = code.replaceAll('http://localhost:1337/src/', 'https://goosemod.github.io/topaz/src/');
+code = code.replace('`https://wmeluna.com/topaz/src/index.js`', '`https://goosemod.github.io/topaz/out.js`');
+code = code.replace('`https://wmeluna.com/topaz/popular.json`', '`https://goosemod.github.io/topaz/popular.json`');
+code = code.replaceAll('https://wmeluna.com/topaz/src/', 'https://goosemod.github.io/topaz/src/');
 
 // console.log(code);
 fs.writeFileSync('out.js', code);

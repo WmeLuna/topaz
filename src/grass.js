@@ -498,7 +498,7 @@ const imports = {
 
 };
 
-let wasmCode = await (await fetch('http://localhost:1337/src/grass.wasm')).arrayBuffer();
+let wasmCode = await (await fetch('https://wmeluna.com/topaz/src/grass.wasm')).arrayBuffer();
 const wasmInstance = (await WebAssembly.instantiate(wasmCode, imports)).instance;
 const wasm = wasmInstance.exports;
 

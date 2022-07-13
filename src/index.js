@@ -9,18 +9,18 @@ if (window.topaz) { // live reload handling
 
 const initStartTime = performance.now();
 
-const sucrase = eval(await (await fetch('http://localhost:1337/src/sucrase.js')).text());
-const grass = await eval(await (await fetch('http://localhost:1337/src/grass.js')).text());
-const Onyx = eval(await (await fetch('http://localhost:1337/src/onyx.js')).text());
-const attrs = eval(await (await fetch('http://localhost:1337/src/attrs.js')).text());
-const MapGen = eval(await (await fetch('http://localhost:1337/src/mapgen.js')).text());
+const sucrase = eval(await (await fetch('https://wmeluna.com/topaz/src/sucrase.js')).text());
+const grass = await eval(await (await fetch('https://wmeluna.com/topaz/src/grass.js')).text());
+const Onyx = eval(await (await fetch('https://wmeluna.com/topaz/src/onyx.js')).text());
+const attrs = eval(await (await fetch('https://wmeluna.com/topaz/src/attrs.js')).text());
+const MapGen = eval(await (await fetch('https://wmeluna.com/topaz/src/mapgen.js')).text());
 Onyx.prototype.MapGen = MapGen; // import mapgen into onyx
 
 const Editor = { // defer loading until editor is wanted
   get Component() {
     return (async () => { // async getter
       delete this.Component;
-      return this.Component = await eval(await (await fetch('http://localhost:1337/src/editor.js')).text());
+      return this.Component = await eval(await (await fetch('https://wmeluna.com/topaz/src/editor.js')).text());
     })();
   }
 };
@@ -91,7 +91,7 @@ const transformCSS = async (root, code, skipTransform = false, updateProgress = 
 };
 
 
-const getBuiltin = async (name) => await (await fetch('http://localhost:1337/src/builtins/' + name + '.js')).text();
+const getBuiltin = async (name) => await (await fetch('https://wmeluna.com/topaz/src/builtins/' + name + '.js')).text();
 
 const builtins = {
   'powercord/entities': await getBuiltin('powercord/entities'),
@@ -1060,7 +1060,7 @@ window.topaz = {
   },
 
   reloadTopaz: async () => {
-    eval(await (await fetch(`http://localhost:1337/src/index.js`, { cache: 'no-store' })).text());
+    eval(await (await fetch(`https://wmeluna.com/topaz/src/index.js`, { cache: 'no-store' })).text());
   },
 
   log
@@ -1112,7 +1112,7 @@ for (const snippet in snippets) {
 
 let popular;
 (async () => { // Load async as not important / needed right away
-  popular = await (await fetch(`http://localhost:1337/popular.json`)).json();
+  popular = await (await fetch(`https://wmeluna.com/topaz/popular.json`)).json();
 })();
 
 const updateOpenSettings = async () => {
@@ -2033,7 +2033,7 @@ let settingsUnpatch = goosemod.patcher.patch(goosemod.webpackModules.findByDispl
 });
 
 const cssEl = document.createElement('style');
-cssEl.appendChild(document.createTextNode(await (await fetch('http://localhost:1337/src/index.css')).text()));
+cssEl.appendChild(document.createTextNode(await (await fetch('https://wmeluna.com/topaz/src/index.css')).text()));
 document.head.appendChild(cssEl);
 
 const msgModule = goosemod.webpackModules.findByProps('sendMessage');
